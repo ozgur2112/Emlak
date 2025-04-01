@@ -3,139 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emlak Sitesi</title>
+    <title>Emlak Sitesi - Sahibinden Benzeri</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #fff; /* Beyaz zemin */
-            color: #333; /* Koyu gri metin */
+            background-color: #f4f4f4;
         }
-
         header {
-            background-color: #f1c40f; /* Sarı renk */
-            color: white;
-            padding: 10px 0;
+            background-color: #ffcc00;
+            padding: 20px 0;
             text-align: center;
         }
-
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        nav ul li {
-            display: inline;
-            margin: 0 10px;
-        }
-
-        nav ul li a {
+        header h1 {
             color: white;
+            margin: 0;
+        }
+        .nav-links {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .nav-links a {
+            margin: 0 20px;
             text-decoration: none;
+            color: white;
             font-weight: bold;
         }
-
-        section {
-            padding: 20px;
-            text-align: center;
-        }
-
-        #home {
-            background-color: #f4f4f4; /* Açık gri arka plan */
-        }
-
-        #properties {
-            background-color: #fff; /* Beyaz zemin */
-        }
-
-        .property-list {
+        .search-bar {
+            margin: 20px auto;
+            padding: 10px;
+            max-width: 600px;
             display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .property {
-            border: 1px solid #ccc;
-            padding: 15px;
+            justify-content: space-between;
             background-color: #fff;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
         }
-
-        .property img {
-            max-width: 100%;
-            height: auto;
+        .search-bar input {
+            width: 80%;
+            padding: 8px;
+            font-size: 16px;
         }
-
-        button {
-            background-color: #f1c40f; /* Sarı renk */
-            color: white;
+        .search-bar button {
+            width: 15%;
+            padding: 8px;
+            font-size: 16px;
+            background-color: #ffcc00;
             border: none;
-            padding: 10px 20px;
+            color: white;
             cursor: pointer;
+            border-radius: 5px;
         }
-
-        button:hover {
-            background-color: #d4a10a; /* Sarı tonda koyulaşma */
+        .property-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .property-item {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .property-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .property-item .details {
+            padding: 10px;
+        }
+        .property-item h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+        .property-item p {
+            margin: 5px 0;
+            color: #555;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
         }
     </style>
 </head>
 <body>
+
     <header>
         <h1>Emlak Sitesi</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Ana Sayfa</a></li>
-                <li><a href="#properties">Emlaklar</a></li>
-                <li><a href="#contact">İletişim</a></li>
-            </ul>
-        </nav>
+        <div class="nav-links">
+            <a href="#">Ana Sayfa</a>
+            <a href="#">İlan Ver</a>
+            <a href="#">İletişim</a>
+        </div>
     </header>
 
-    <section id="home">
-        <h2>Hoşgeldiniz</h2>
-        <p>En güncel emlak ilanlarını burada bulabilirsiniz.</p>
-    </section>
+    <div class="search-bar">
+        <input type="text" placeholder="Ne arıyorsunuz? (Örneğin, İstanbul, Satılık Daire)">
+        <button type="button">Ara</button>
+    </div>
 
-    <section id="properties">
-        <h2>Emlak İlanları</h2>
-        <div class="property-list">
-            <div class="property">
-                <img src="house1.jpg" alt="Ev 1">
-                <h3>3+1 Daire</h3>
-                <p>Fiyat: 500.000₺</p>
-            </div>
-            <div class="property">
-                <img src="house2.jpg" alt="Ev 2">
-                <h3>2+1 Daire</h3>
-                <p>Fiyat: 350.000₺</p>
-            </div>
-            <div class="property">
-                <img src="house3.jpg" alt="Ev 3">
-                <h3>Bahçeli Villa</h3>
-                <p>Fiyat: 1.200.000₺</p>
+    <div class="property-list">
+        <div class="property-item">
+            <img src="https://via.placeholder.com/400x200" alt="Emlak 1">
+            <div class="details">
+                <h3>Satılık Daire - 3+1</h3>
+                <p>İstanbul, Kadıköy</p>
+                <p>1.200.000 TL</p>
             </div>
         </div>
-    </section>
-
-    <section id="contact">
-        <h2>İletişim</h2>
-        <form action="#">
-            <label for="name">Adınız:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">E-posta:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="message">Mesajınız:</label>
-            <textarea id="message" name="message" required></textarea>
-
-            <button type="submit">Gönder</button>
-        </form>
-    </section>
+        <div class="property-item">
+            <img src="https://via.placeholder.com/400x200" alt="Emlak 2">
+            <div class="details">
+                <h3>Kiralık Daire - 2+1</h3>
+                <p>İstanbul, Üsküdar</p>
+                <p>5.500 TL/ay</p>
+            </div>
+        </div>
+        <div class="property-item">
+            <img src="https://via.placeholder.com/400x200" alt="Emlak 3">
+            <div class="details">
+                <h3>Satılık Daire - 1+1</h3>
+                <p>İstanbul, Beşiktaş</p>
+                <p>800.000 TL</p>
+            </div>
+        </div>
+    </div>
 
     <footer>
-        <p>&copy; 2025 Emlak Sitesi | Tüm Hakları Saklıdır.</p>
+        <p>© 2025 Emlak Sitesi | Tüm Hakları Saklıdır</p>
     </footer>
+
 </body>
 </html>
